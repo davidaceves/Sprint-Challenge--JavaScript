@@ -22,12 +22,30 @@ class CuboidMaker {
         return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
     }
 }  
+
+// The formulas for finding the volume and surface area of cubes and cuboids are the same.
+
+class CubeMaker extends CuboidMaker{
+    constructor(object) {
+        super(object);
+    }
+}
+
 const cuboid = new CuboidMaker({
     length: 4,
     width: 5,
     height: 5
   });
 
+const cube = new CubeMaker({
+    length: 4,
+    width: 4,
+    height: 4
+  });
+
 
 console.log(cuboid.volume()); // 100
 console.log(cuboid.surfaceArea()); // 130
+
+console.log(cube.volume()); // 64 
+console.log(cube.surfaceArea()); // 96
